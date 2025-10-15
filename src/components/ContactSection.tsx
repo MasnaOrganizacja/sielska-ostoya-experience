@@ -21,7 +21,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-32 bg-background overflow-hidden">
+    <section id="contact" ref={sectionRef} className="relative py-32 bg-background overflow-hidden">
       {/* Morphing Shapes Background */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 1000 1000">

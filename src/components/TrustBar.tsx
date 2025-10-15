@@ -32,7 +32,7 @@ const TrustBar = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-muted overflow-hidden border-y border-border">
+    <section id="trustbar" className="py-12 bg-muted overflow-hidden border-y border-border">
       <div className="relative">
         <div
           ref={scrollRef}

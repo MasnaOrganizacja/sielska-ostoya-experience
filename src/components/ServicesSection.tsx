@@ -1,45 +1,55 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Bed, Home, Users, Sparkles } from 'lucide-react';
-import roomImage from '@/assets/room-lavender.jpg';
-import { Button } from '@/components/ui/button';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "@/components/ui/button";
+import {
+  Mountain,
+  Flame,
+  Wifi,
+  ChefHat,
+  Home,
+  ShowerHead,
+  Tv,
+  Wine,
+  Lock,
+  Bed,
+  Bath,
+  Sofa,
+  Trees,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    title: 'Pokój "Lawenda"',
+    title: "Dom Rodzinny",
+    size: "85m²",
+    guests: "4-6 osób",
     description:
-      'Przestronny pokój z widokiem na góry. Lniane pościele, naturalne drewno, własna łazienka z ekologicznymi kosmetykami. Dla 2 osób.',
-    icon: Bed,
-    price: 'od 320 zł/noc',
-    image: roomImage,
-    features: ['Widok na góry', 'Własna łazienka', 'Śniadanie w cenie'],
+      "Przestronny dom z tradycyjną architekturą beskidzką. Idealne miejsce dla rodzin szukających autentycznego wypoczynku w górach.",
+    price: "520 zł / noc",
+    image: "/images/large/dom1-l.webp",
+    features: ["Widok na góry", "Kominek", "WiFi", "Kuchnia", "Taras", "Ogród"],
   },
   {
-    title: 'Domek "Pod Lasem"',
+    title: "Chata Góralska",
+    size: "65m²",
+    guests: "3-4 osoby",
     description:
-      'Niezależny drewniany domek dla 4-6 osób. Dwie sypialnie, salon z kominkiem, w pełni wyposażona kuchnia. Idealny dla rodzin.',
-    icon: Home,
-    price: 'od 550 zł/noc',
-    features: ['4-6 osób', 'Kuchnia', 'Kominek', 'Taras'],
+      "Klimatyczna chata w stylu góralskim z drewnianymi belkami i tradycyjnym wystrojem. Pełna uroku i ciepła domowego ogniska.",
+    price: "380 zł / noc",
+    image: "/images/large/dom2-l.webp",
+    features: ["Łazienka", "Kominek", "WiFi", "Kuchnia", "Taras"],
   },
   {
-    title: 'Pakiet Rodzinny',
+    title: "Willa Beskidzka",
+    size: "120m²",
+    guests: "6-8 osób",
     description:
-      'Trzydniowy pobyt dla rodziny z dziećmi. Jazda konna, warsztaty, całodzienne wyżywienie, ognisko wieczorami.',
-    icon: Users,
-    price: 'od 1890 zł',
-    features: ['3 dni/2 noce', 'Pełne wyżywienie', 'Atrakcje w cenie'],
-  },
-  {
-    title: 'Weekend Detox',
-    description:
-      'Specjalny pakiet regeneracyjny: joga o świcie, nordic walking, masaże, wegetariańskie posiłki z własnych produktów.',
-    icon: Sparkles,
-    price: 'od 890 zł/os',
-    features: ['Joga', 'Masaże', 'Zdrowe posiłki', '2 dni'],
+      "Luksusowa willa z panoramicznym widokiem na Beskidy. Nowoczesne udogodnienia w tradycyjnej oprawie górskiej architektury.",
+    price: "750 zł / noc",
+    image: "/images/large/dom3-l.webp",
+    features: ["3 Sypialnie", "Jacuzzi", "Sauna", "Kuchnia", "Salon", "Ogród"],
   },
 ];
 
@@ -49,42 +59,68 @@ const ServicesSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Stagger reveal animation for cards
-      gsap.from(cardsRef.current, {
-        opacity: 0,
-        y: 60,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 60%',
-        },
+      // Cards fade in animation
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.fromTo(
+            card,
+            { opacity: 0, y: 60 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              delay: index * 0.2,
+              scrollTrigger: {
+                trigger: card,
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        }
       });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
+  const getIcon = (feat: string) => {
+    if (feat.includes("góry") || feat.includes("Widok")) return Mountain;
+    if (feat.includes("Kominek")) return Flame;
+    if (feat.includes("WiFi")) return Wifi;
+    if (feat.includes("Kuchnia")) return ChefHat;
+    if (feat.includes("Taras")) return Home;
+    if (feat.includes("Łazienka")) return ShowerHead;
+    if (feat.includes("TV")) return Tv;
+    if (feat.includes("Bar")) return Wine;
+    if (feat.includes("Sejf")) return Lock;
+    if (feat.includes("Sypialnie")) return Bed;
+    if (feat.includes("Jacuzzi")) return Bath;
+    if (feat.includes("Sauna")) return Flame;
+    if (feat.includes("Salon")) return Sofa;
+    if (feat.includes("Ogród")) return Trees;
+    return Home;
+  };
+
   return (
-    <section ref={sectionRef} className="py-32 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="services" ref={sectionRef} className="py-20 bg-background">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
-          <span className="text-secondary text-sm uppercase tracking-wider font-semibold">
+          <span className="text-accent text-sm uppercase tracking-wider font-semibold">
             Noclegi & Pakiety
           </span>
-          <h2 className="mt-4 mb-6">Wybierz Swój Pobyt</h2>
+          <h2 className="mt-4 mb-6 text-4xl md:text-5xl font-bold text-foreground">
+            Wybierz Swój Pobyt
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Od romantycznych pokoi po całe domki i specjalne pakiety – każda opcja zapewnia
-            komfort, autentyczność i bliskość natury.
+            Od romantycznych pokoi po całe domki i specjalne pakiety – każda
+            opcja zapewnia komfort, autentyczność i bliskość natury.
           </p>
         </div>
 
-        {/* Bento Box Layout - Asymmetric Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="space-y-16">
           {services.map((service, index) => {
-            const Icon = service.icon;
-            const isLarge = index === 0;
+            const isReverse = index % 2 === 1;
 
             return (
               <div
@@ -92,49 +128,77 @@ const ServicesSection = () => {
                 ref={(el) => {
                   if (el) cardsRef.current[index] = el;
                 }}
-                className={`
-                  group relative overflow-hidden bg-card border border-border
-                  transition-all duration-500 hover:shadow-[var(--shadow-medium)] hover:-translate-y-2
-                  ${isLarge ? 'md:col-span-2 md:row-span-2' : ''}
-                `}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
               >
-                {/* Image background for first card */}
-                {isLarge && service.image && (
-                  <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                {/* Image - bez bordera, lekko krzywe */}
+                <div className={`${isReverse ? "lg:order-2" : "lg:order-1"}`}>
+                  <div
+                    className={`relative h-80 lg:h-96 transform transition-all duration-500 hover:rotate-0 ${
+                      isReverse ? "rotate-2" : "-rotate-2"
+                    }`}
+                  >
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
+                    {/* Cena w lewym dolnym rogu zdjęcia */}
+                    <div className="absolute bottom-4 left-4 bg-accent text-white px-4 py-2 font-bold shadow-lg">
+                      {service.price}
+                    </div>
                   </div>
-                )}
+                </div>
 
-                <div className="relative p-8 h-full flex flex-col">
-                  <div className="mb-4">
-                    <Icon className="w-10 h-10 text-secondary" />
-                  </div>
-
-                  <h3 className="text-2xl mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4 flex-grow">{service.description}</p>
-
-                  <div className="space-y-2 mb-4">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className="text-secondary">•</span>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
+                {/* Text Content */}
+                <div className={`${isReverse ? "lg:order-1" : "lg:order-2"}`}>
+                  <div className="flex gap-3 mb-4">
+                    <span className="border border-gray-300 text-gray-600 px-3 py-1 text-sm">
+                      {service.size}
+                    </span>
+                    <span className="border border-gray-300 text-gray-600 px-3 py-1 text-sm">
+                      {service.guests}
+                    </span>
                   </div>
 
-                  <div className="flex items-end justify-between mt-auto">
-                    <span className="text-2xl font-bold text-secondary">{service.price}</span>
-                    <Button
-                      size="sm"
-                      className="bg-primary text-primary-foreground hover:bg-primary/90"
-                    >
-                      Rezerwuj
-                    </Button>
+                  <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="mb-8">
+                    <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+                      Udogodnienia
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.features.map((feature, i) => {
+                        const IconComponent = getIcon(feature);
+
+                        return (
+                          <span
+                            key={i}
+                            className="border border-gray-300 text-gray-600 px-3 py-1 text-sm flex items-center gap-2"
+                          >
+                            <IconComponent className="w-4 h-4 text-accent" />
+                            {feature}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
+
+                  <Button 
+                    className="bg-accent hover:bg-accent/90 text-white px-8 py-3 font-semibold text-lg"
+                    onClick={() => {
+                      document.getElementById('contact')?.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                    }}
+                  >
+                    Sprawdź Dostępność
+                  </Button>
                 </div>
               </div>
             );

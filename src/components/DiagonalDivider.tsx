@@ -1,13 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import meadowImage from '@/assets/meadow-diagonal.jpg';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DiagonalDivider = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -42,7 +44,7 @@ const DiagonalDivider = () => {
         style={{
           top: '-20%',
           height: '140%',
-          backgroundImage: `url(${meadowImage})`,
+          backgroundImage: `url(/images/large/view-l.webp)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

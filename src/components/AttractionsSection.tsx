@@ -13,9 +13,7 @@ import {
   TreePine,
   Footprints,
 } from 'lucide-react';
-import horseImage from '@/assets/horse-stable.jpg';
-import cheeseImage from '@/assets/workshop-cheese.jpg';
-import breakfastImage from '@/assets/breakfast-table.jpg';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,63 +23,56 @@ const attractions = [
     description:
       'Codziennie o 9:00 i 16:00. Dla początkujących i zaawansowanych. Konie rasowe, bezpieczne trasy, instruktor z 20-letnim doświadczeniem.',
     icon: Home,
-    image: horseImage,
+    image: '/images/large/donkeys-l.webp',
   },
   {
     title: 'Warsztaty Serowarskie',
     description:
       'Tradycyjne wytwarzanie sera podhalańskiego. Pani Helena nauczy Cię metod przekazywanych od pokoleń. Własnoręcznie zrobiony ser zabierasz do domu.',
     icon: Leaf,
-    image: cheeseImage,
+    image: '/images/large/cow-l.webp',
   },
   {
     title: 'Wypożyczalnia Rowerów',
     description:
       'Górskie i trekkingowe rowery najnowszej generacji. Oznakowane trasy różnej trudności. Mapy i GPS w cenie.',
     icon: Bike,
+    image: '/images/large/bike-l.webp',
   },
   {
     title: 'Farm-to-Table',
     description:
       'Wszystkie posiłki z własnych produktów: jaja od szczęśliwych kur, warzywa z ogrodu, mięso od lokalnych hodowców. Zero chemii.',
     icon: UtensilsCrossed,
-    image: breakfastImage,
+    image: '/images/large/chickens-l.webp',
   },
   {
     title: 'Nordic Walking',
     description:
       'Poranne wyprawy po górskich szlakach z certyfikowanym instruktorem. Kijki i profesjonalny sprzęt zapewniamy.',
     icon: Footprints,
+    image: '/images/large/nordicwalking-l.webp',
   },
   {
     title: 'Trekking Górski',
     description:
       'Przewodnik górski poprowadzi Cię na najpiękniejsze szczyty Beskidu Małego. Dla każdego poziomu zaawansowania.',
     icon: Mountain,
+    image: '/images/large/hike-l.webp',
   },
   {
     title: 'Ogniska & BBQ',
     description:
       'Wieczorne ogniska z pieczeniem kiełbasek i pieczonych ziemniaków. Grill dostępny cały dzień.',
     icon: Tent,
+    image: '/images/large/campfire-l.webp',
   },
   {
     title: 'Łowienie Ryb',
     description:
       'Prywatny staw zarybiony pstrągami. Wędki i przynęty w wypożyczalni. Złowioną rybę przyrządzamy na kolację.',
     icon: Fish,
-  },
-  {
-    title: 'Warsztaty Fotografii',
-    description:
-      'Profesjonalny fotograf krajobrazowy nauczy Cię uchwycić magię Beskidów. Sesje o wschodzie i zachodzie słońca.',
-    icon: Camera,
-  },
-  {
-    title: 'Leśne Ścieżki',
-    description:
-      'Spacery edukacyjne po lesie z leśniczym. Poznaj lokalne zioła, grzyby i tajemnice beskidzkiej przyrody.',
-    icon: TreePine,
+    image: '/images/large/fishing-l.webp',
   },
 ];
 

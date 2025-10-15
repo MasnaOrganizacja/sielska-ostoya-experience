@@ -7,8 +7,9 @@ import ServicesSection from '@/components/ServicesSection';
 import DiagonalDivider from '@/components/DiagonalDivider';
 import AttractionsSection from '@/components/AttractionsSection';
 import HorizontalGallery from '@/components/HorizontalGallery';
-import ProcessSection from '@/components/ProcessSection';
-import TeamSection from '@/components/TeamSection';
+import TimelineSection from '@/components/TimelineSection';
+
+
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQSection from '@/components/FAQSection';
 import ContactSection from '@/components/ContactSection';
@@ -31,8 +32,7 @@ const Index = () => {
       <DiagonalDivider />
       <AttractionsSection />
       <HorizontalGallery />
-      <ProcessSection />
-      <TeamSection />
+      <TimelineSection />
       <TestimonialsSection />
       <FAQSection />
       <ContactSection />

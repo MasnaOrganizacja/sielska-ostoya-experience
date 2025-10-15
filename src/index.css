@@ -8,57 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Organic Minimalism Design System - HSL Only */
+    /* Unified Ranch Design System - Stone & Orange */
     
-    /* Primary Colors - Natural & Earthy */
-    --background: 30 100% 97%; /* #FFF8F3 - Papier Eko */
-    --foreground: 25 20% 20%; /* #3A332C - Brąz kawowy */
+    /* Primary Colors - Stone & Cream */
+    --background: 30 100% 97%; /* #FFF8F3 - Cream background */
+    --foreground: 25 5% 15%; /* #262626 - Stone-900 equivalent */
 
     --card: 30 100% 97%;
-    --card-foreground: 25 20% 20%;
+    --card-foreground: 25 5% 15%;
 
     --popover: 30 100% 97%;
-    --popover-foreground: 25 20% 20%;
+    --popover-foreground: 25 5% 15%;
 
-    /* Primary - Dark Brown for text & borders */
-    --primary: 25 20% 20%; /* #3A332C */
+    /* Primary - Stone Dark */
+    --primary: 25 5% 15%; /* Stone-900 equivalent */
     --primary-foreground: 30 100% 97%;
 
-    /* Secondary - Soft moss green */
-    --secondary: 72 30% 55%; /* #A3B56D */
-    --secondary-foreground: 25 20% 20%;
+    /* Secondary - Orange accent */
+    --secondary: 25 95% 53%; /* Orange-600 equivalent */
+    --secondary-foreground: 30 100% 97%;
 
-    /* Muted - Lighter earth tone */
-    --muted: 30 40% 92%;
-    --muted-foreground: 25 15% 45%;
+    /* Muted - Stone variants */
+    --muted: 30 6% 90%; /* Stone-100 equivalent */
+    --muted-foreground: 25 4% 46%; /* Stone-600 equivalent */
 
-    /* Accent - Burnt orange/ochre */
-    --accent: 36 60% 60%; /* #DDAA55 */
-    --accent-foreground: 25 20% 20%;
+    /* Accent - Orange primary */
+    --accent: 25 95% 53%; /* Orange-600 */
+    --accent-foreground: 30 100% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 30 100% 97%;
 
-    --border: 30 30% 85%;
-    --input: 30 30% 85%;
-    --ring: 25 20% 20%;
+    --border: 30 6% 85%; /* Stone-200 equivalent */
+    --input: 30 6% 85%;
+    --ring: 25 95% 53%; /* Orange ring */
 
-    --radius: 0rem; /* Sharp corners - Swiss Style */
+    --radius: 0.5rem; /* Rounded corners */
 
-    /* Custom Design Tokens */
-    --hero-bg: 72 35% 50%; /* Deep moss for hero */
-    --story-bg: 25 25% 15%; /* Dark brown for storytelling */
-    --divider-bg: 36 65% 65%; /* Warm ochre */
+    /* Custom Design Tokens - Unified Stone & Orange */
+    --hero-bg: 25 5% 15%; /* Stone-900 for hero */
+    --story-bg: 25 5% 15%; /* Stone-900 for storytelling */
+    --divider-bg: 25 95% 53%; /* Orange accent */
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(72 35% 50%), hsl(72 25% 40%));
-    --gradient-warm: linear-gradient(180deg, hsl(30 100% 97%), hsl(36 70% 85%));
-    --gradient-earth: linear-gradient(135deg, hsl(25 30% 25%), hsl(25 20% 20%));
+    /* Gradients - Stone & Orange */
+    --gradient-hero: linear-gradient(135deg, hsl(25 5% 15%), hsl(25 5% 25%));
+    --gradient-warm: linear-gradient(180deg, hsl(30 100% 97%), hsl(25 95% 85%));
+    --gradient-earth: linear-gradient(135deg, hsl(25 5% 20%), hsl(25 5% 15%));
     
-    /* Shadows - Organic & Soft */
-    --shadow-soft: 0 4px 20px -4px hsl(25 20% 20% / 0.1);
-    --shadow-medium: 0 8px 30px -6px hsl(25 20% 20% / 0.15);
-    --shadow-large: 0 20px 50px -12px hsl(25 20% 20% / 0.25);
+    /* Shadows - Stone based */
+    --shadow-soft: 0 4px 20px -4px hsl(25 5% 15% / 0.1);
+    --shadow-medium: 0 8px 30px -6px hsl(25 5% 15% / 0.15);
+    --shadow-large: 0 20px 50px -12px hsl(25 5% 15% / 0.25);
     
     /* Transitions */
     --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,33 +66,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 25 20% 8%;
+    --background: 25 5% 15%; /* Stone-900 */
     --foreground: 30 100% 97%;
 
-    --card: 25 20% 12%;
+    --card: 25 5% 20%; /* Stone-800 equivalent */
     --card-foreground: 30 100% 97%;
 
-    --popover: 25 20% 12%;
+    --popover: 25 5% 20%;
     --popover-foreground: 30 100% 97%;
 
     --primary: 30 100% 97%;
-    --primary-foreground: 25 20% 20%;
+    --primary-foreground: 25 5% 15%;
 
-    --secondary: 72 25% 45%;
+    --secondary: 25 95% 53%; /* Orange-600 */
     --secondary-foreground: 30 100% 97%;
 
-    --muted: 25 20% 15%;
-    --muted-foreground: 30 40% 70%;
+    --muted: 25 5% 25%; /* Stone-700 equivalent */
+    --muted-foreground: 30 6% 70%; /* Stone-300 equivalent */
 
-    --accent: 36 55% 55%;
+    --accent: 25 95% 53%; /* Orange-600 */
     --accent-foreground: 30 100% 97%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 30 100% 97%;
 
-    --border: 25 20% 20%;
-    --input: 25 20% 20%;
-    --ring: 30 100% 97%;
+    --border: 25 5% 25%; /* Stone-700 */
+    --input: 25 5% 25%;
+    --ring: 25 95% 53%; /* Orange ring */
   }
 }
 
@@ -167,5 +167,36 @@ html.lenis {
   .gpu-accelerated {
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+}
+
+/* Testimonials Carousel Animation */
+@keyframes scroll-testimonials {
+  0% {
+    transform: translateX(calc(50vw - 160px)); /* Start with first card centered (50vw - half card width) */
+  }
+  100% {
+    transform: translateX(-3200px); /* End off left edge */
+  }
+}
+
+/* Mobile Testimonials Animation - starts with first card centered */
+@keyframes scroll-testimonials-mobile {
+  0% {
+    transform: translateX(calc(50vw - 160px)); /* Start with first card centered */
+  }
+  100% {
+    transform: translateX(-100vw); /* End at left edge */
+  }
+}
+
+/* Testimonials Carousel Classes */
+.testimonials-carousel {
+  animation: scroll-testimonials 60s linear infinite;
+}
+
+@media (max-width: 767px) {
+  .testimonials-carousel {
+    animation: scroll-testimonials-mobile 60s linear infinite;
   }
 }
