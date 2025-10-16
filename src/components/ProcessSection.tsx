@@ -1,50 +1,58 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Calendar, MessageSquare, CreditCard, MapPin, Key, Smile } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Calendar,
+  MessageSquare,
+  CreditCard,
+  MapPin,
+  Key,
+  Smile,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
-    title: 'Wybierz Termin',
+    title: "Wybierz Termin",
     description:
-      'Sprawdź dostępność w kalendarzu online. Wysoki sezon (lipiec-sierpień) rezerwuj z 2-miesięcznym wyprzedzeniem.',
+      "Sprawdź dostępność w kalendarzu online. Wysoki sezon (lipiec-sierpień) rezerwuj z 2-miesięcznym wyprzedzeniem.",
     icon: Calendar,
   },
   {
-    title: 'Wypełnij Formularz',
+    title: "Wypełnij Formularz",
     description:
-      'Podstawowe dane, liczba osób, preferencje żywieniowe (wegetariańskie, bezglutenowe itp.).',
+      "Podstawowe dane, liczba osób, preferencje żywieniowe (wegetariańskie, bezglutenowe itp.).",
     icon: MessageSquare,
   },
   {
-    title: 'Potwierdzenie',
+    title: "Potwierdzenie",
     description:
-      'Odbierz maila z potwierdzeniem rezerwacji i szczegółami płatności. Odpowiadamy w ciągu 2 godzin.',
+      "Odbierz maila z potwierdzeniem rezerwacji i szczegółami płatności. Odpowiadamy w ciągu 2 godzin.",
     icon: CreditCard,
   },
   {
-    title: 'Wpłata Zadatku',
-    description: '30% wartości rezerwacji na konto. Pozostałe 70% płacisz na miejscu (gotówka/karta).',
+    title: "Wpłata Zadatku",
+    description:
+      "30% wartości rezerwacji na konto. Pozostałe 70% płacisz na miejscu (gotówka/karta).",
     icon: CreditCard,
   },
   {
-    title: 'Dojazd',
+    title: "Dojazd",
     description:
-      'Otrzymasz szczegółową mapę dojazdu. Z Krakowa 1h 20min, z Katowic 50min. Parking bezpłatny.',
+      "Otrzymasz szczegółową mapę dojazdu. Z Krakowa 1h 20min, z Katowic 50min. Parking bezpłatny.",
     icon: MapPin,
   },
   {
-    title: 'Zameldowanie',
+    title: "Zameldowanie",
     description:
-      'Check-in od 15:00. Spotkanie z gospodarzami, herbata powitalna, przegląd atrakcji.',
+      "Check-in od 15:00. Spotkanie z gospodarzami, herbata powitalna, przegląd atrakcji.",
     icon: Key,
   },
   {
-    title: 'Ciesz się Pobytem',
+    title: "Ciesz się Pobytem",
     description:
-      'Check-out do 11:00. Zabierz ze sobą wspomnienia, naładowane baterie i kawałek naszego sera!',
+      "Check-out do 11:00. Zabierz ze sobą wspomnienia, naładowane baterie i kawałek naszego sera!",
     icon: Smile,
   },
 ];
@@ -64,11 +72,11 @@ const ProcessSection = () => {
 
         gsap.to(lineRef.current, {
           strokeDashoffset: 0,
-          ease: 'none',
+          ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top center',
-            end: 'bottom center',
+            start: "top center",
+            end: "bottom center",
             scrub: 1,
           },
         });
@@ -82,7 +90,7 @@ const ProcessSection = () => {
           duration: 0.6,
           scrollTrigger: {
             trigger: step,
-            start: 'top 80%',
+            start: "top 80%",
           },
         });
       });
@@ -100,7 +108,8 @@ const ProcessSection = () => {
           </span>
           <h2 className="mt-4 mb-6">7 Kroków do Wymarzonego Wypoczynku</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Rezerwacja jest prosta i bezpieczna. Krok po kroku przeprowadzimy Cię przez cały proces.
+            Rezerwacja jest prosta i bezpieczna. Krok po kroku przeprowadzimy
+            Cię przez cały proces.
           </p>
         </div>
 
@@ -137,25 +146,35 @@ const ProcessSection = () => {
                   `}
                 >
                   {/* Content */}
-                  <div className={`${isLeft ? 'lg:text-right' : 'lg:col-start-2'}`}>
+                  <div
+                    className={`${isLeft ? "lg:text-right" : "lg:col-start-2"}`}
+                  >
                     <div
                       className={`
                         inline-block bg-card p-8 shadow-[var(--shadow-medium)] 
-                        border-l-4 ${isLeft ? 'border-secondary' : 'border-accent'}
+                        border-l-4 ${
+                          isLeft ? "border-secondary" : "border-accent"
+                        }
                       `}
                     >
                       <div
-                        className={`flex items-center gap-4 mb-4 ${isLeft ? 'lg:flex-row-reverse' : ''}`}
+                        className={`flex items-center gap-4 mb-4 ${
+                          isLeft ? "lg:flex-row-reverse" : ""
+                        }`}
                       >
                         <div className="bg-secondary/10 p-3 shrink-0">
                           <Icon className="w-8 h-8 text-secondary" />
                         </div>
                         <div>
-                          <span className="text-sm text-muted-foreground">Krok {index + 1}</span>
+                          <span className="text-sm text-muted-foreground">
+                            Krok {index + 1}
+                          </span>
                           <h3 className="text-2xl">{step.title}</h3>
                         </div>
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
                     </div>
                   </div>
 
