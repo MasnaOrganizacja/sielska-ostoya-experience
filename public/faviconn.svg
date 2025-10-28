@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#2D5016"/>
+  
+  <!-- Tractor main body -->
+  <rect x="6" y="15" width="14" height="7" rx="1.5" fill="#4A7C59"/>
+  
+  <!-- Tractor cabin -->
+  <rect x="13" y="9" width="7" height="8" rx="1" fill="#6B8E23"/>
+  
+  <!-- Front wheel (small) -->
+  <circle cx="9" cy="24" r="3.5" fill="#1a1a1a"/>
+  <circle cx="9" cy="24" r="2.5" fill="#444"/>
+  <circle cx="9" cy="24" r="1" fill="#666"/>
+  
+  <!-- Back wheel (large) -->
+  <circle cx="18" cy="25" r="4.5" fill="#1a1a1a"/>
+  <circle cx="18" cy="25" r="3.5" fill="#444"/>
+  <circle cx="18" cy="25" r="1.5" fill="#666"/>
+  
+  <!-- Window -->
+  <rect x="14" y="10" width="5" height="4" rx="0.5" fill="#87CEEB" opacity="0.8"/>
+  
+  <!-- Exhaust pipe -->
+  <rect x="19" y="6" width="1.5" height="5" rx="0.5" fill="#333"/>
+  
+  <!-- Front grille -->
+  <rect x="5" y="16" width="2" height="4" rx="0.5" fill="#333"/>
+  
+  <!-- Headlight -->
+  <circle cx="6" cy="17" r="1" fill="#FFD700"/>
+  
+  <!-- Roof line -->
+  <rect x="13" y="9" width="7" height="1" fill="#8FBC8F"/>
+</svg>
